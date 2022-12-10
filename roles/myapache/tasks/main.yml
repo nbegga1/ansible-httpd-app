@@ -4,7 +4,7 @@
 
 - name: "Install httpd package"
   package:
-    name: httpd-2.4.54
+    name: httpd=2.4.54
     state: present
 
 - name: "Install firewalld package"
