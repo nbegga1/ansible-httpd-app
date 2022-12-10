@@ -41,7 +41,7 @@
     state: started
 
 - name: "Add firewall rule"
-  firewalld:
+  ansible.posix.firewalld:
       port: "{{ ap_http_port }}/tcp"
       permanent: yes
       state: enabled
