@@ -1,5 +1,5 @@
 
-- hosts: localhost
+- hosts: webserver
 
   roles:
   - role: "myapache"
