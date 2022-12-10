@@ -11,7 +11,7 @@ ap_http_host_dir: "my_host_dir"
 ap_http_conf_file: "my_host_dir.conf"
 
 #httpd port on which the webserver will be accessed
-ap_http_port: 80
+ap_http_port: 8000
 
 #source code location
 ap_source_code_location: "files/source_code"
