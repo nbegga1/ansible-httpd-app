@@ -2,13 +2,16 @@
 
 # tasks file for CentOS
 
-- name: "Install CentOS packages"
+- name: "Install httpd package"
   package:
-    name: "{{ item }}"
+    name: httpd
     state: present
-  loop:
-  - "{{ ap_additional_yum_packages }}"
-  - "httpd"
+
+- name: "Install firewalld package"
+  package:
+    name: firewalld
+    state: present
+
 
 - name: Disable SELinux
   ansible.posix.selinux:
