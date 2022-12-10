@@ -3,6 +3,7 @@
 
 ap_additional_yum_packages:
 - git
+- firewalld
 
 #document root directory
 ap_http_host_dir: "my_host_dir"
