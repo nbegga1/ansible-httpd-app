@@ -10,6 +10,10 @@
   - "{{ ap_additional_yum_packages }}"
   - "httpd"
 
+- name: Disable SELinux
+  ansible.posix.selinux:
+    state: disabled
+
 - name: "Create document root"
   file:
       path: "/var/www/{{ ap_http_host_dir }}"
