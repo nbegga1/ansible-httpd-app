@@ -40,6 +40,16 @@
     name: "httpd"
     state: started
 
+- name: Enable firewalld
+  service:
+    name: "firewalld"
+    enabled: yes
+
+- name: start firewalld
+  service:
+    name: "firewalld"
+    state: started
+
 - name: "Add firewall rule"
   ansible.posix.firewalld:
       port: "{{ ap_http_port }}/tcp"
