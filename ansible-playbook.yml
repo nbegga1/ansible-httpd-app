@@ -2,7 +2,7 @@
 - hosts: webserver
 
   roles:
-  - role: "myapache"
+  - role: "ansible-httpd-app"
 
   collections:
   - name: ansible.posix
