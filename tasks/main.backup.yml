@@ -1,6 +1,0 @@
----
-# tasks file for myapache
-
-- name: "Run for CentOS"
-  import_tasks: "CentOS.yml"
-  when: ansible_os_family == "CentOS"
