@@ -1,8 +1,0 @@
-
-- hosts: webserver
-
-  roles:
-  - role: "ansible-httpd-app"
-
-  collections:
-  - name: ansible.posix
