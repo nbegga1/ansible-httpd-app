@@ -3,9 +3,9 @@ Ansible httpd role
 
 This role deploys an httpd application, by installing httpd and running it as a service. 
 
-Next to that it deploys a default Apache webserver will be listening on a specified port.
+Next to that it deploys a default Apache webserver that is listening on a specified port.
 
-To access the webserver this role also installs firewalld and runs it a service. Also it configures the firewall so that the webserver will be accessible on the specified port.
+To securely access the webserver this role also installs firewalld and runs it a service. Also it configures the firewall so that the webserver will be accessible on the specified port.
 
 
 Requirements
@@ -15,7 +15,7 @@ This role has no requirements on which it is built
 
 Example Playbook
 ----------------
-In the playbook you can specify the httpd version.
+The role can be run by a playbook in the following way:
 
     - hosts: webserver
 
@@ -23,6 +23,8 @@ In the playbook you can specify the httpd version.
       - role: "ansible-httpd-app"
         vars:
           httpd_version: 2.4.6
+
+Note: In the playbook you can specify the httpd version.
 
 Role Variables
 --------------
