@@ -1,31 +1,56 @@
-Role Name
+Ansible httpd role
 =========
 
-A brief description of the role goes here.
+This role deploys an httpd application, by installing httpd and running it as a service. 
+
+Next to that it deploys a default Apache webserver will be listening on a specified port.
+
+To access the webserver this role also installs firewalld and runs it a service. Also it configures the firewall so that the webserver will be accessible on the specified port.
+
 
 Requirements
 ------------
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+This role has no requirements on which it is built
+
+Example Playbook
+----------------
+In the playbook you can specify the httpd version.
+
+    - hosts: webserver
+
+      roles:
+      - role: "ansible-httpd-app"
+        vars:
+          httpd_version: 2.4.6
 
 Role Variables
 --------------
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+
+    
+    ---
+    # defaults file for myapache
+
+    #document root directory
+    ap_http_host_dir: "my_host_dir"
+
+    #httpd configuration file name
+    ap_http_conf_file: "my_host_dir.conf"
+
+    #httpd port on which the webserver will be accessed
+    ap_http_port: 8000
+
+    #source code location
+    ap_source_code_location: "files/source_code"
 
 Dependencies
 ------------
 
 A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
 
-Example Playbook
-----------------
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
 
-    - hosts: servers
-      roles:
-         - { role: username.rolename, x: 42 }
 
 License
 -------
