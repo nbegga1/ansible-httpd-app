@@ -5,7 +5,7 @@
 - name: "Install httpd package"
   package:
     name: "httpd-{{ httpd_version }}"
-#    state: present
+    state: present
 
 - name: "Install firewalld package"
   package:
