@@ -1,38 +1,50 @@
-Role Name
+Ansible httpd role
 =========
 
-A brief description of the role goes here.
+This role deploys an httpd application, by installing httpd and running it as a service. 
+
+Next to that it deploys a default Apache webserver that is listening on a specified port.
+
+To securely access the webserver this role also installs firewalld and runs it a service. Also it configures the firewall so that the webserver will be accessible on the specified port.
+
 
 Requirements
 ------------
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+This role has no requirements on which it is built
+
+Example Playbook
+----------------
+The role can be run by a playbook in the following way:
+
+    - hosts: webserver
+
+      roles:
+      - role: "ansible-httpd-app"
+        vars:
+          httpd_version: 2.4.6
+
+Note: In the playbook you can specify the httpd version.
 
 Role Variables
 --------------
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
 
-Dependencies
-------------
+    
+    ---
+    # defaults file for myapache
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+    #document root directory
+    ap_http_host_dir: "my_host_dir"
 
-Example Playbook
-----------------
+    #httpd configuration file name
+    ap_http_conf_file: "my_host_dir.conf"
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+    #httpd port on which the webserver will be accessed
+    ap_http_port: 8000
 
-    - hosts: servers
-      roles:
-         - { role: username.rolename, x: 42 }
+    #source code location
+    ap_source_code_location: "files/source_code"
 
-License
--------
 
-BSD
 
-Author Information
-------------------
-
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
